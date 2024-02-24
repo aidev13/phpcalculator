@@ -1,7 +1,10 @@
 # PHP Calculator
 
-A calcualtor built in PHP.
+A calculator built in PHP.
 
 ## Setup
 
-You will need xammp or apache to run the server side lanauage of PHP
+> xampp
+Install - https://www.apachefriends.org/download.html
+
+
