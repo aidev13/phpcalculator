@@ -24,64 +24,70 @@
          </select>
          <?php
 
+         $value = 0;
+         $item_name = '';
+
          if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $promo_code = htmlspecialchars($_POST['promo_code']);
             $item = htmlspecialchars($_POST['items']);
-            $value = 0;
 
-            //Calculate number if no errors
-            $item_name = 'Please';
 
-               $value = 0;
 
-               switch ($item) {
-                  case 'empty':
-                     $item_name = "Choose an item";
-                     $value = "0";
-                     break;
-                  case 'Chair':
-                     $item_name = 'Chair';
-                     $value = 39.95;
-                     break;
-                  case 'Table':
-                     $item_name = 'Table';
-                     $value = 129.95;
-                     break;
-                  case 'Bench':
-                     $item_name = 'Bench';
-                     $value = 56.95;
-                     break;
-                  case 'Plate':
-                     $item_name = 'Plate';
-                     $value = 39.95;
-                     break;
-                  case 'Dresser':
-                     $item_name = 'Dresser';
-                     $value = 97.00;
-                     break;
-                  default:;
-                     echo "<p class='error'>Something went wrong, try again.</p>";
-               }
+            switch ($item) {
+               case 'empty':
+                  $item_name = "Choose an item";
+                  $value = "0";
+                  break;
+               case 'Chair':
+                  $item_name = 'Chair';
+                  $value = 39.95;
+                  break;
+               case 'Table':
+                  $item_name = 'Table';
+                  $value = 129.95;
+                  break;
+               case 'Bench':
+                  $item_name = 'Bench';
+                  $value = 56.95;
+                  break;
+               case 'Plate':
+                  $item_name = 'Plate';
+                  $value = 19.95;
+                  break;
+               case 'Dresser':
+                  $item_name = 'Dresser';
+                  $value = 97.00;
+                  break;
+               default:;
+                  echo "<p class='error'>Something went wrong, try again.</p>";
+                  break;
             }
+         }
 
-            echo '<p>' . $item_name . ' - Price: $';
-            echo $value;
-            echo '</p>';
+         echo '<p>' . $item_name . ' - Price: $';
+         echo $value;
+         echo '</p>';
          ?>
 
-         <p>Enter Promo Code</p>
-         <input type="text" name="promo_code" placeholder="Enter Promo Code">
+         <label for="promo">Enter Promo code for 20% off</label>
+         <br>
+         <input type="text" name="promo_code" id="promo" placeholder="Enter Promo Code">
 
          <button>Check out</button>
 
          <?php
          if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if ($promo_code == 'Spring24!') {
+
+            if (empty($promo_code)) {
+               echo "";
+            } else if ($promo_code == 'Spring24!') {
                $sale_price = $value - $value * .2;
                echo "<p> Your total is $";
                echo $sale_price;
                echo "</p>";
+            } else {
+               echo "Promo code not valid";
             }
          }
          ?>
