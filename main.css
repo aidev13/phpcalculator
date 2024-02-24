@@ -1,16 +1,26 @@
 body {
    margin-top: 50px;
    /* width: 500px; */
-   background-color: rgb(98, 165, 242);
+   background-color: rgb(54, 54, 54);
+}
+
+h1 {
+   margin-top: -20px;
+   color: chartreuse;
 }
 
 .container {
    margin: auto;
-   width: 50%;
-   border: 3px solid rgb(0, 93, 185);
-   padding: 15px;
+   border: 3px solid rgb(40, 40, 40);
+   padding: 45px 0;
    border-radius: 20px;
    text-align: center;
+   width: 500px;
+   background-color: rgb(82, 82, 82);
+}
+
+.container:hover {
+   box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
 
 .error {
@@ -23,3 +33,41 @@ body {
   color: white;
   text-align: center;
 }
+
+input[type=number] {
+   border-radius: 8px;
+   height: 25px;
+   padding-left: 6px;
+}
+
+input[type=number]:hover {
+   box-shadow: rgba(214, 214, 214, 0.682) 0px 0px 0px 3px;
+}
+
+select {
+   margin: 8px 0;
+   height: 25px;
+   font-size: 18px;
+   border-radius: 3px;
+   border: none;
+}
+
+select:hover {
+   box-shadow: rgba(214, 214, 214, 0.682) 0px 0px 0px 3px;
+}
+
+button {
+   border-radius: 18px;
+   padding: 8px 12px;
+   border: none;
+}
+
+button:hover {
+   box-shadow: rgba(214, 214, 214, 0.682) 0px 0px 0px 3px;
+}
+
+@media only screen and (max-width: 600px) {
+   .container {
+      width: 300px;
+   }
+ }

@@ -12,7 +12,7 @@
 <body>
 
    <div class="container">
-
+<h1> A simple Calculate built in PHP </h1>
       <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
          <input type="number" name="num1" placeholder="Number 1">
