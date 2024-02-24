@@ -1,0 +1,25 @@
+body {
+   margin-top: 50px;
+   /* width: 500px; */
+   background-color: rgb(98, 165, 242);
+}
+
+.container {
+   margin: auto;
+   width: 50%;
+   border: 3px solid rgb(0, 93, 185);
+   padding: 15px;
+   border-radius: 20px;
+   text-align: center;
+}
+
+.error {
+   color: rgb(255, 255, 255);
+   font-size: 22px;
+   text-align: center;
+}
+
+.calculated-results {
+  color: white;
+  text-align: center;
+}
