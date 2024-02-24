@@ -82,6 +82,8 @@
 
    ?>
 
+   <button class=""><a href="sales-form/form.php">Go to Check Out</a></button>
+
 </body>
 
 </html>
