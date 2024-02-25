@@ -1,3 +1,15 @@
+<?php
+
+$prices = [
+"chair" => 35.95,
+"table" => 185.65,
+"bench" => 85.98,
+"plates" => 12.95,
+"dresser" => 65.50
+];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
