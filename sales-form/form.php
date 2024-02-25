@@ -1,11 +1,11 @@
 <?php
 
 $prices = [
-"chair" => 35.95,
-"table" => 185.65,
-"bench" => 85.98,
-"plates" => 12.95,
-"dresser" => 65.50
+   "chair" => 45.95,
+   "table" => 185.65,
+   "bench" => 85.98,
+   "plates" => 12.95,
+   "dresser" => 65.51
 ];
 
 ?>
@@ -16,7 +16,11 @@ $prices = [
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Check Out</title>
+   <title>Check out</title>
+   <link rel="stylesheet" href="sales-form.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -24,15 +28,15 @@ $prices = [
       <h2>Check out</h2>
    </header>
 
-   <section>
+   <section class="card">
       <form action="<?php $_SERVER["PHP_SELF"]; ?>" method="post">
          <select name="items">
             <option value="empty">Choose an item</option>
-            <option value="Chair">Chair</option>
-            <option value="Table">Table</option>
-            <option value="Bench">Bench</option>
-            <option value="Plate">Plates</option>
-            <option value="Dresser">Dresser</option>
+            <option value="Chair">Chair - $<?php echo $prices["chair"]; ?></option>
+            <option value="Table">Table - $<?php echo $prices["table"]; ?></option>
+            <option value="Bench">Bench - $<?php echo $prices["bench"]; ?></option>
+            <option value="Plate">Plates - $<?php echo $prices["plates"]; ?></option>
+            <option value="Dresser">Dresser - $<?php echo $prices["dresser"]; ?></option>
          </select>
          <?php
 
@@ -53,23 +57,23 @@ $prices = [
                   break;
                case 'Chair':
                   $item_name = 'Chair';
-                  $value = 39.95;
+                  $value = $prices["chair"];
                   break;
                case 'Table':
                   $item_name = 'Table';
-                  $value = 129.95;
+                  $value = $prices["table"];
                   break;
                case 'Bench':
                   $item_name = 'Bench';
-                  $value = 56.95;
+                  $value = $prices["bench"];
                   break;
                case 'Plate':
                   $item_name = 'Plate';
-                  $value = 19.95;
+                  $value = $prices["plates"];
                   break;
                case 'Dresser':
                   $item_name = 'Dresser';
-                  $value = 97.00;
+                  $value = $prices["dresser"];
                   break;
                default:;
                   echo "<p class='error'>Something went wrong, try again.</p>";
